@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "module": "amd",
+    "strict": true,
+    "outDir": "build/js",
+    "esModuleInterop": true
+  },
+  "include": [
+    "src/ts/*.ts"
+  ]
+}
