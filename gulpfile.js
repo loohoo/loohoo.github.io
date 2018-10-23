@@ -15,7 +15,6 @@ let path = require('path');
 // let source_map = require('gulp-sourcemap');
 
 let libs = [
-    'node_modules/pixi.js/dist/pixi.min.js',
     'node_modules/requirejs/require.js'
 ];
 
@@ -47,12 +46,6 @@ gulp.task('cp', ()=>{
 
 });
 
-gulp.task('css', ()=>{
-
-    return gulp.src('src/css/**/*')
-        .pipe(gulp.dest('build/css/'));
-
-});
 
 gulp.task('ass', ()=>{
 
@@ -78,11 +71,10 @@ gulp.task('ts', ()=>{
 
 });
 
-gulp.task('default', ['cp','html','css','ass','ts'], function(){
+gulp.task('default', ['cp','html','ass','ts'], function(){
 
     gulp.watch('src/ts/*.ts', ['ts']);
     gulp.watch('src/ass/**/*', ['ass']);
-    gulp.watch('src/css/**/*', ['css']);
     gulp.watch('src/index.html', ['html']);
 
 });
