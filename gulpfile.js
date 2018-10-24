@@ -23,9 +23,9 @@ let posix_path = function (path_str) {
     return path_str.split(path.sep).join('/');
 };
 
-let out_dir = 'gh-pages/'
-let out_js = 'gh-pages/js/';
-let out_ass = 'gh-pages/ass/';
+let out_dir = 'docs/'
+let out_js = 'docs/js/';
+let out_ass = 'docs/ass/';
 
 
 gulp.task('cp', ()=>{
