@@ -23,6 +23,9 @@ let posix_path = function (path_str) {
     return path_str.split(path.sep).join('/');
 };
 
+let out_dir = 'gh-pages/'
+let out_js = 'gh-pages/js/';
+let out_ass = 'gh-pages/ass/';
 
 
 gulp.task('cp', ()=>{
@@ -33,7 +36,7 @@ gulp.task('cp', ()=>{
 
             if (!file.isNull()) {
 
-                if (!fs.existsSync('build/js/' + path.basename(file.path))) {
+                if (!fs.existsSync(out_js + path.basename(file.path))) {
 
                     this.push(file);
                 }
@@ -42,7 +45,7 @@ gulp.task('cp', ()=>{
             cb();
 
         }))
-        .pipe(gulp.dest("build/js"));
+        .pipe(gulp.dest(out_js));
 
 });
 
@@ -50,13 +53,13 @@ gulp.task('cp', ()=>{
 gulp.task('ass', ()=>{
 
     return gulp.src('src/ass/**/*')
-        .pipe(gulp.dest('build/ass'));
+        .pipe(gulp.dest(out_ass));
 
 });
 gulp.task('html', ()=>{
 
     return gulp.src('src/index.html')
-        .pipe(gulp.dest('build/'));
+        .pipe(gulp.dest(out_dir));
 
 });
 
@@ -67,7 +70,7 @@ gulp.task('ts', ()=>{
 
     return gulp.src("src/ts/*.ts")
         .pipe(tsProject())
-        .pipe(gulp.dest('build/js')).on('error', log);
+        .pipe(gulp.dest(out_js)).on('error', log);
 
 });
 
