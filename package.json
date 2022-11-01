@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/loohoo/h5#readme",
   "devDependencies": {
-    "gulp": "^3.9.1",
+    "gulp": "^4.0.2",
     "gulp-typescript": "^5.0.0-alpha.3",
     "through2": "^2.0.3",
     "typescript": "^3.1.3"
